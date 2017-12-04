@@ -7,7 +7,7 @@
 
 namespace day1
 {
-	inline uint64_t part1()
+	inline int64_t part1()
 	{
 		auto line = getLine("Day1.txt");
 
@@ -18,7 +18,7 @@ namespace day1
 
 		line += line[0];
 
-		uint64_t result = 0;
+		int64_t result = 0;
 
 		for (size_t i = 0; i < line.size() - 1; ++i)
 		{
@@ -31,7 +31,7 @@ namespace day1
 		return result;
 	}
 
-	inline uint64_t part2()
+	inline int64_t part2()
 	{
 		auto line = getLine("Day1.txt");
 
@@ -42,7 +42,7 @@ namespace day1
 
 		const auto halfway = line.size() / 2;
 
-		uint64_t result = 0;
+		int64_t result = 0;
 
 		for (size_t i = 0; i < line.size() - 1; ++i)
 		{

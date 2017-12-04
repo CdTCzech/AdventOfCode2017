@@ -8,15 +8,15 @@
 
 namespace day2
 {
-	inline uint64_t part1()
+	inline int64_t part1()
 	{
-		uint64_t result = 0;
+		int64_t result = 0;
 
 		for (auto line : getLineByLine("Day2.txt"))
 		{
-			uint64_t min = UINT64_MAX;
-			uint64_t max = 0;
-			uint64_t current = 0;
+			int64_t min = INT64_MAX;
+			int64_t max = 0;
+			int64_t current = 0;
 
 			std::istringstream iss(line);
 			while (iss >> current)
@@ -31,28 +31,42 @@ namespace day2
 		return result;
 	}
 
-	inline uint64_t part2()
+	inline int64_t calc(const std::vector<int64_t>& numbers)
 	{
-		uint64_t result = 0;
+		for (size_t i = 0; i < numbers.size() - 1; ++i)
+		{
+			for (auto j = i + 1; j < numbers.size() - 1; ++j)
+			{
+				if ((numbers[i] % numbers[j]) == 0)
+				{
+					return numbers[i] / numbers[j];
+				}
+
+				if ((numbers[j] % numbers[i]) == 0)
+				{
+					return numbers[j] / numbers[i];
+				}
+			}
+		}
+
+		return 0;
+	}
+
+	inline int64_t part2()
+	{
+		int64_t result = 0;
 
 		for (auto line : getLineByLine("Day2.txt"))
 		{
-			uint64_t current;
-			std::vector<uint64_t> numbers;
+			int64_t current;
+			std::vector<int64_t> numbers;
 			std::istringstream iss(line);
 			while (iss >> current)
 			{
 				numbers.emplace_back(current);
 			}
 
-			for (size_t i = 0; i < numbers.size() - 1; ++i)
-			{
-				for (size_t j = i + 1; j < numbers.size() - 1; ++j)
-				{
-					if ((numbers[i] % numbers[j]) == 0) result += numbers[i] / numbers[j];
-					if ((numbers[j] % numbers[i]) == 0) result += numbers[j] / numbers[i];
-				}
-			}
+			result += calc(numbers);
 		}
 
 		return result;

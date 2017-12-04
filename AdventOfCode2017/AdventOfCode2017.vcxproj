@@ -128,8 +128,10 @@
   <ItemGroup>
     <ClInclude Include="Day1.h" />
     <ClInclude Include="Day2.h" />
+    <ClInclude Include="Day3.h" />
     <ClInclude Include="FileReader.h" />
     <ClInclude Include="Test.h" />
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
