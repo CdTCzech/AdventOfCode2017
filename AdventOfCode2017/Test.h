@@ -42,7 +42,7 @@ namespace test
 		else
 		{
 			SetConsoleTextAttribute(handle, 12);
-			std::cout << message << result << ") status: FAIL\n";
+			std::cout << message << result << " expected: " << expected << ") status: FAIL\n";
 			SetConsoleTextAttribute(handle, attributes);
 		}
 

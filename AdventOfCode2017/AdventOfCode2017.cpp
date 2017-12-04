@@ -1,6 +1,7 @@
 #include "Day1.h"
 #include "Day2.h"
 #include "Day3.h"
+#include "Day4.h"
 
 #include "Test.h"
 
@@ -13,6 +14,8 @@ int main(int /*argc*/, char** /*argv*/)
 	test::test<int64_t>(2, 2,     244, day2::part2);
 	test::test<int64_t>(3, 1,     326, day3::part1);
 	test::test<int64_t>(3, 2, 363'010, day3::part2);
+	test::test<int64_t>(4, 1,     451, day4::part1);
+	test::test<int64_t>(4, 2,     223, day4::part2);
 
 	system("pause");
 	return 0;
