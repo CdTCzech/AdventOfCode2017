@@ -4,6 +4,7 @@
 
 #include <algorithm>
 #include <cstdint>
+#include <execution>
 #include <iterator>
 #include <set>
 #include <sstream>
@@ -56,7 +57,7 @@ namespace day4
 
 			for (auto& token : tokens)
 			{
-				std::sort(token.begin(), token.end());
+				std::sort(std::execution::par, token.begin(), token.end());
 			}
 
 			for (const auto& token : tokens)

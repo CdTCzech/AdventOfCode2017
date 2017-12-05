@@ -1,5 +1,6 @@
 #pragma once
 
+#include <algorithm>
 #include <chrono>
 #include <cstdint>
 #include <functional>
@@ -47,5 +48,52 @@ namespace test
 		}
 
 		return same;
+	}
+
+	template<typename T>
+	bool bench(const uint8_t day, const uint8_t part, const size_t repetitions, const T expected, std::function<T()> func)
+	{
+		std::vector<T> results;
+		std::vector<int64_t> times;
+
+		for (size_t i = 0; i < repetitions; ++i)
+		{
+			const auto start = std::chrono::high_resolution_clock::now();
+			const auto result = func();
+			times.emplace_back(std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::high_resolution_clock::now() - start).count());
+			results.emplace_back(result);
+		}
+
+		auto allOk = true;
+
+		for (const auto& result : results)
+		{
+			if (result != expected)
+			{
+				allOk = false;
+			}
+		}
+
+		std::string status;
+
+		if (allOk)
+		{
+			status = "OK";
+		}
+		else
+		{
+			status = "FAIL";
+		}
+
+		const auto average = std::accumulate(times.begin(), times.end(), static_cast<int64_t>(0)) / times.size();
+
+		auto dayString = std::to_string(day);
+		if (day < 10) dayString = '0' + dayString;
+		auto partSring = std::to_string(part);
+		if (part < 10) partSring = '0' + partSring;
+
+		std::cout << dayString << '|' << partSring << " bench status: " << status << " time: " << average << "\n";
+
+		return allOk;
 	}
 }
