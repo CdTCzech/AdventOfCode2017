@@ -135,6 +135,7 @@
     <ClInclude Include="Day3.h" />
     <ClInclude Include="Day4.h" />
     <ClInclude Include="Day5.h" />
+    <ClInclude Include="Day6.h" />
     <ClInclude Include="FileReader.h" />
     <ClInclude Include="Test.h" />
     <ClInclude Include="Utils.h" />
