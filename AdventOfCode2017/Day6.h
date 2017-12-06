@@ -35,6 +35,11 @@ namespace day6
 			}
 		}
 
+		if (banks.empty())
+		{
+			return 0;
+		}
+
 		std::set<std::string> states;
 		int64_t result = 0;
 
@@ -76,6 +81,11 @@ namespace day6
 			{
 				banks.emplace_back(utils::toInteger(token));
 			}
+		}
+
+		if (banks.empty())
+		{
+			return 0;
 		}
 
 		std::map<std::string, int64_t> states;
