@@ -1,10 +1,11 @@
 #pragma once
 
 #include <cstdint>
+#include <string>
 
 
-namespace day5
+namespace day7
 {
-	int64_t part1();
+	std::string part1();
 	int64_t part2();
 }
