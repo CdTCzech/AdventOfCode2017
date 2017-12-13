@@ -5,6 +5,7 @@
 #include "Day5.h"
 #include "Day6.h"
 #include "Day7.h"
+#include "Day8.h"
 
 #include "Test.h"
 
@@ -31,6 +32,8 @@ int main(int /*argc*/, char** /*argv*/)
 		test::test<int64_t>(     6,  2,      2'765, day6::part2);
 		test::test<std::string>( 7,  1,  "xegshds", day7::part1);
 		test::test<int64_t>(     7,  2,        299, day7::part2);
+		test::test<int64_t>(     8,  1,      4'902, day8::part1);
+		test::test<int64_t>(     8,  2,      7'037, day8::part2);
 	}
 	catch (std::exception& exception)
 	{
