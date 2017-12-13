@@ -14,7 +14,7 @@ namespace day5
 
 		for (auto line : getLineByLine("Day5.txt"))
 		{
-			jumpList.emplace_back(utils::toInteger(line));
+			jumpList.emplace_back(std::stoll(line));
 		}
 
 		int64_t result = 0;
@@ -37,7 +37,7 @@ namespace day5
 
 		for (auto line : getLineByLine("Day5.txt"))
 		{
-			jumpList.emplace_back(utils::toInteger(line));
+			jumpList.emplace_back(std::stoll(line));
 		}
 
 		int64_t result = 0;

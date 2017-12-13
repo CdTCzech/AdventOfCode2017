@@ -31,7 +31,7 @@ namespace day6
 			std::vector<std::string> tokens{ std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{} };
 			for (const auto& token : tokens)
 			{
-				banks.emplace_back(utils::toInteger(token));
+				banks.emplace_back(std::stoll(token));
 			}
 		}
 
@@ -79,7 +79,7 @@ namespace day6
 			std::vector<std::string> tokens{ std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{} };
 			for (const auto& token : tokens)
 			{
-				banks.emplace_back(utils::toInteger(token));
+				banks.emplace_back(std::stoll(token));
 			}
 		}
 

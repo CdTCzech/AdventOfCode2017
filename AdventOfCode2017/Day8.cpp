@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <iterator>
 #include <map>
+#include <sstream>
 #include <string>
 
 
@@ -26,7 +27,7 @@ namespace day8
 			}
 
 			const auto secondInst = registers.find(tokens[4]);
-			if (firstInst == registers.end())
+			if (secondInst == registers.end())
 			{
 				registers.insert({ tokens[4], 0 });
 			}
@@ -98,7 +99,7 @@ namespace day8
 			}
 
 			const auto secondInst = registers.find(tokens[4]);
-			if (firstInst == registers.end())
+			if (secondInst == registers.end())
 			{
 				registers.insert({ tokens[4], 0 });
 			}

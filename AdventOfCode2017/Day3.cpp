@@ -12,7 +12,7 @@ namespace day3
 	int64_t part1()
 	{
 		const auto line = getLine("Day3.txt");
-		const auto toFind = utils::toInteger(line);
+		const auto toFind = std::stoll(line);
 
 		const auto root = static_cast<int64_t>(sqrt(toFind - 1));
 		const auto index = toFind - root * root - 1;
@@ -34,7 +34,7 @@ namespace day3
 	int64_t part2()
 	{
 		const auto line = getLine("Day3.txt");
-		const auto toFind = utils::toInteger(line);
+		const auto toFind = std::stoll(line);
 
 		constexpr int64_t X = 11;
 		constexpr int64_t Y = 11;

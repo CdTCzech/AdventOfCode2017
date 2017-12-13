@@ -75,7 +75,7 @@ namespace day7
 				points.emplace_back(tokens.back());
 			}
 
-			programs.insert({ tokens[0], { utils::toInteger(tokens[1].substr(1, tokens[1].size() - 1)), points} });
+			programs.insert({ tokens[0], { std::stoll(tokens[1].substr(1, tokens[1].size() - 1)), points} });
 		}
 
 		auto startDiscs = programs["xegshds"].second;

@@ -1,9 +1,6 @@
 #pragma once
 
 #include <string>
-#include <sstream>
-#include <utility>
-
 
 #define EXCEPTION(what) utils::AoCException(what, __FILE__, __LINE__)
 
@@ -25,18 +22,4 @@ namespace utils
 	private:
 		std::string m_what;
 	};
-
-	template<typename T = int64_t, typename std::enable_if<std::is_integral<T>::value, int>::type = 0>
-	auto toInteger(const std::string& number)
-	{
-		if (number.empty())
-		{
-			EXCEPTION("Converting empty string to number");
-		}
-
-		T result;
-		std::istringstream numberStream(number);
-		numberStream >> result;
-		return result;
-	}
 }
