@@ -10,6 +10,9 @@
 #include "Day10.h"
 #include "Day11.h"
 #include "Day12.h"
+//#include "Day13.h"
+//#include "Day14.h"
+#include "Day15.h"
 
 #include "Test.h"
 
@@ -46,6 +49,8 @@ int main(int /*argc*/, char** /*argv*/)
 		test::test<int64_t>(    11, 2,                              1'532, day11::part2);
 		test::test<int64_t>(    12, 1,                                130, day12::part1);
 		test::test<int64_t>(    12, 2,                                189, day12::part2);
+		test::test<int64_t>(    15, 1,                                594, day15::part1);
+		test::test<int64_t>(    15, 2,                                328, day15::part2);
 	}
 	catch (std::exception& exception)
 	{
