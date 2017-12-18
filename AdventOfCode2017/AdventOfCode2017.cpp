@@ -8,6 +8,7 @@
 #include "Day8.h"
 #include "Day9.h"
 #include "Day10.h"
+#include "Day11.h"
 #include "Day12.h"
 
 #include "Test.h"
@@ -41,6 +42,8 @@ int main(int /*argc*/, char** /*argv*/)
 		test::test<int64_t>(     9, 2,                              6'285,  day9::part2);
 		test::test<int64_t>(    10, 1,                              9'656, day10::part1);
 		test::test<std::string>(10, 2, "20b7b54c92bf73cf3e5631458a715149", day10::part2);
+		test::test<int64_t>(    11, 1,                                764, day11::part1);
+		test::test<int64_t>(    11, 2,                              1'532, day11::part2);
 		test::test<int64_t>(    12, 1,                                130, day12::part1);
 		test::test<int64_t>(    12, 2,                                189, day12::part2);
 	}
