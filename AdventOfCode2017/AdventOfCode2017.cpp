@@ -10,7 +10,7 @@
 #include "Day10.h"
 #include "Day11.h"
 #include "Day12.h"
-//#include "Day13.h"
+#include "Day13.h"
 #include "Day14.h"
 #include "Day15.h"
 #include "Day16.h"
@@ -52,6 +52,8 @@ int main(int /*argc*/, char** /*argv*/)
 		test::test<int64_t>(    11, 2,                              1'532, day11::part2);
 		test::test<int64_t>(    12, 1,                                130, day12::part1);
 		test::test<int64_t>(    12, 2,                                189, day12::part2);
+		test::test<int64_t>(    13, 1,                              1'476, day13::part1);
+		test::test<int64_t>(    13, 2,                          3'937'334, day13::part2);
 		test::test<int64_t>(    14, 1,                              8'230, day14::part1);
 		test::test<int64_t>(    14, 2,                              1'103, day14::part2);
 		test::test<int64_t>(    15, 1,                                594, day15::part1);
