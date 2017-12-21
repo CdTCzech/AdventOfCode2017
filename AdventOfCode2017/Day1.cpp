@@ -31,7 +31,7 @@ namespace day1
 
 	int64_t part2()
 	{
-		auto line = getLine("Day1.txt");
+		const auto line = getLine("Day1.txt");
 
 		if (line.empty())
 		{

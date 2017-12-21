@@ -16,7 +16,7 @@ namespace day4
 	{
 		int64_t result = 0;
 
-		for (auto line : getLineByLine("Day4.txt"))
+		for (const auto& line : getLineByLine("Day4.txt"))
 		{
 			std::istringstream iss(line);
 			std::vector<std::string> tokens{ std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{} };
@@ -47,7 +47,7 @@ namespace day4
 	{
 		int64_t result = 0;
 
-		for (auto line : getLineByLine("Day4.txt"))
+		for (const auto& line : getLineByLine("Day4.txt"))
 		{
 			std::istringstream iss(line);
 			std::vector<std::string> tokens{ std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{} };

@@ -29,7 +29,7 @@ namespace day12
 	{
 		std::map<int64_t, std::vector<int64_t>> travelList;
 
-		for (auto line : getLineByLine("Day12.txt"))
+		for (const auto& line : getLineByLine("Day12.txt"))
 		{
 			std::istringstream iss(line);
 			std::vector<std::string> tokens{ std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{} };
@@ -57,7 +57,7 @@ namespace day12
 	{
 		std::map<int64_t, std::vector<int64_t>> travelList;
 
-		for (auto line : getLineByLine("Day12.txt"))
+		for (const auto& line : getLineByLine("Day12.txt"))
 		{
 			std::istringstream iss(line);
 			std::vector<std::string> tokens{ std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{} };

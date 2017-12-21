@@ -4,8 +4,6 @@
 
 #include <list>
 
-#include <iostream>
-
 
 namespace day17
 {

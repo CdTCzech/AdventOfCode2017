@@ -15,7 +15,7 @@ namespace day8
 	{
 		std::map<std::string, int64_t> registers;
 
-		for (auto line : getLineByLine("Day8.txt"))
+		for (const auto& line : getLineByLine("Day8.txt"))
 		{
 			std::istringstream iss(line);
 			std::vector<std::string> tokens{ std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{} };
@@ -87,7 +87,7 @@ namespace day8
 		std::map<std::string, int64_t> registers;
 		int64_t result = INT64_MIN;
 
-		for (auto line : getLineByLine("Day8.txt"))
+		for (const auto& line : getLineByLine("Day8.txt"))
 		{
 			std::istringstream iss(line);
 			std::vector<std::string> tokens{ std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{} };

@@ -11,10 +11,11 @@
 #include "Day11.h"
 #include "Day12.h"
 //#include "Day13.h"
-//#include "Day14.h"
+#include "Day14.h"
 #include "Day15.h"
 #include "Day16.h"
 #include "Day17.h"
+//#include "Day18.h"
 
 #include "Test.h"
 
@@ -51,12 +52,16 @@ int main(int /*argc*/, char** /*argv*/)
 		test::test<int64_t>(    11, 2,                              1'532, day11::part2);
 		test::test<int64_t>(    12, 1,                                130, day12::part1);
 		test::test<int64_t>(    12, 2,                                189, day12::part2);
+		test::test<int64_t>(    14, 1,                              8'230, day14::part1);
+		test::test<int64_t>(    14, 2,                              1'103, day14::part2);
 		test::test<int64_t>(    15, 1,                                594, day15::part1);
 		test::test<int64_t>(    15, 2,                                328, day15::part2);
 		test::test<std::string>(16, 1,                 "fnloekigdmpajchb", day16::part1);
 		test::test<std::string>(16, 2,                 "amkjepdhifolgncb", day16::part2);
 		test::test<int64_t>(    17, 1,                                926, day17::part1);
 		test::test<int64_t>(    17, 2,                         10'150'888, day17::part2);
+		//test::test<int64_t>(    18, 1,                              3'423, day18::part1);
+		//test::test<int64_t>(    18, 2,                              3'423, day18::part2);
 	}
 	catch (std::exception& exception)
 	{
