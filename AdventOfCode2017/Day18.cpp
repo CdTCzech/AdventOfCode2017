@@ -2,12 +2,16 @@
 
 #include "FileReader.h"
 
+#include <atomic>
+#include <condition_variable>
 #include <iterator>
+#include <locale>
+#include <mutex>
 #include <queue>
 #include <sstream>
 #include <string>
+#include <thread>
 #include <vector>
-#include <locale>
 
 
 namespace day18
@@ -92,10 +96,15 @@ namespace day18
 		}
 	}
 
+	std::mutex m;
+	std::condition_variable cv;
+
+	bool terminate = false;
+
 	class Cpu
 	{
 	public:
-		Cpu() : m_registers(26, 0), m_sendTimes(0)
+		Cpu() : m_registers(26, 0), m_sendTimes(0), m_waiting(false)
 		{	
 		}
 
@@ -106,14 +115,35 @@ namespace day18
 
 		void send(const size_t index)
 		{
+			std::unique_lock<std::mutex> lk(m);
 			m_toSend.push(m_registers[index]);
 			++m_sendTimes;
+			lk.unlock();
+			cv.notify_one();
+		}
+
+		bool available() const
+		{
+			std::unique_lock<std::mutex> lk(m);
+			return !m_toSend.empty();
 		}
 
 		int64_t recieve()
 		{
+			std::unique_lock<std::mutex> lk(m);
+			cv.wait(lk, [toSend = &m_toSend] {return !toSend->empty() || terminate; });
+
+			if (terminate)
+			{
+				return 0;
+			}
+
 			const auto temp = m_toSend.front();
 			m_toSend.pop();
+
+			lk.unlock();
+			cv.notify_one();
+
 			return temp;
 		}
 
@@ -122,10 +152,22 @@ namespace day18
 			return m_sendTimes;
 		}
 
+		void setWaiting(const bool waiting)
+		{
+			m_waiting = waiting;
+		}
+
+
+		bool isWaiting() const
+		{
+			return  m_waiting;
+		}
+
 	private:
 		std::vector<int64_t> m_registers;
 		std::queue<int64_t> m_toSend;
 		int64_t m_sendTimes;
+		std::atomic<bool> m_waiting;
 	};
 
 	Cpu cpu0;
@@ -176,21 +218,52 @@ namespace day18
 			}
 			else if (instructions[index][0] == "rcv")
 			{
-				cpu[instructions[index][1][0] - 'a'] = otherCpu.recieve();
+				cpu.setWaiting(true);
+				if (otherCpu.isWaiting() && !otherCpu.available() && !cpu.available())
+				{
+					terminate = true;
+					cv.notify_one();
+					return;
+				}
+				const auto temp = otherCpu.recieve();
+				if (terminate)
+				{
+					return;
+				}
+				cpu[instructions[index][1][0] - 'a'] = temp;
+				cpu.setWaiting(false);
 			}
 			else if (instructions[index][0] == "jgz")
 			{
-				if (cpu[instructions[index][1][0] - 'a'] > 0)
+				if (std::isalpha(instructions[index][1][0], loc))
 				{
-					if (std::isalpha(instructions[index][2][0], loc))
+					if (cpu[instructions[index][1][0] - 'a'] > 0)
 					{
-						index += cpu[instructions[index][2][0] - 'a'];
+						if (std::isalpha(instructions[index][2][0], loc))
+						{
+							index += cpu[instructions[index][2][0] - 'a'];
+						}
+						else
+						{
+							index += std::stoll(instructions[index][2]);
+						}
+						continue;
 					}
-					else
+				}
+				else
+				{
+					if (std::stoll(instructions[index][1]) > 0)
 					{
-						index += std::stoll(instructions[index][2]);
+						if (std::isalpha(instructions[index][2][0], loc))
+						{
+							index += cpu[instructions[index][2][0] - 'a'];
+						}
+						else
+						{
+							index += std::stoll(instructions[index][2]);
+						}
+						continue;
 					}
-					continue;
 				}
 			}
 			++index;
@@ -207,7 +280,16 @@ namespace day18
 			std::vector<std::string> tokens{ std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{} };
 			instructions.emplace_back(tokens);
 		}
+
+		cpu0['p' - 'a'] = 0;
+		cpu1['p' - 'a'] = 1;
+
+		std::thread cpu0Thread(cpuWork, std::ref(instructions), std::ref(cpu0), std::ref(cpu1));
+		std::thread cpu1Thread(cpuWork, std::ref(instructions), std::ref(cpu1), std::ref(cpu0));
+
+		cpu0Thread.join();
+		cpu1Thread.join();
 		
-		return 0;
+		return cpu1.sendTimes();
 	}
 }

@@ -15,7 +15,7 @@
 #include "Day15.h"
 #include "Day16.h"
 #include "Day17.h"
-//#include "Day18.h"
+#include "Day18.h"
 
 #include "Test.h"
 
@@ -62,8 +62,8 @@ int main(int /*argc*/, char** /*argv*/)
 		test::test<std::string>(16, 2,                 "amkjepdhifolgncb", day16::part2);
 		test::test<int64_t>(    17, 1,                                926, day17::part1);
 		test::test<int64_t>(    17, 2,                         10'150'888, day17::part2);
-		//test::test<int64_t>(    18, 1,                              3'423, day18::part1);
-		//test::test<int64_t>(    18, 2,                              3'423, day18::part2);
+		test::test<int64_t>(    18, 1,                              3'423, day18::part1);
+		test::test<int64_t>(    18, 2,                              7'493, day18::part2);
 	}
 	catch (std::exception& exception)
 	{
