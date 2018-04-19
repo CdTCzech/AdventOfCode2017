@@ -22,7 +22,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{D57DB341-3B1C-4D4F-B3B8-76DE5CF7D422}</ProjectGuid>
     <RootNamespace>AdventOfCode2017</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -141,6 +141,7 @@
     <ClCompile Include="Day19.cpp" />
     <ClCompile Include="Day2.cpp" />
     <ClCompile Include="Day22.cpp" />
+    <ClCompile Include="Day23.cpp" />
     <ClCompile Include="Day3.cpp" />
     <ClCompile Include="Day4.cpp" />
     <ClCompile Include="Day5.cpp" />
@@ -163,6 +164,7 @@
     <ClInclude Include="Day19.h" />
     <ClInclude Include="Day2.h" />
     <ClInclude Include="Day22.h" />
+    <ClInclude Include="Day23.h" />
     <ClInclude Include="Day3.h" />
     <ClInclude Include="Day4.h" />
     <ClInclude Include="Day5.h" />

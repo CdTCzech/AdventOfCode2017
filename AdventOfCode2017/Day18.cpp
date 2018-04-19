@@ -105,7 +105,7 @@ namespace day18
 	{
 	public:
 		Cpu() : m_registers(26, 0), m_sendTimes(0), m_waiting(false)
-		{	
+		{
 		}
 
 		int64_t& operator[](const size_t index)
@@ -289,7 +289,7 @@ namespace day18
 
 		cpu0Thread.join();
 		cpu1Thread.join();
-		
+
 		return cpu1.sendTimes();
 	}
 }
