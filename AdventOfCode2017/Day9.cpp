@@ -21,7 +21,7 @@ namespace day9
 			}
 			else if (garbage && character != '>')
 			{
-				
+
 			}
 			else if (character == '{')
 			{
