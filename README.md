@@ -1,6 +1,4 @@
 # Advent of Code 2017
-My solutions of Advent of Code 2017 in modern C++.
+My solutions of Advent of Code 2017 in C++.
 
-Currently tested only in Visual Studio 2017 Update 6.
-
-Thanks everyone!
+Tested in Visual Studio 2019 Preview 1.
