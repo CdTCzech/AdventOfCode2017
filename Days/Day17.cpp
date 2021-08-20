@@ -1,6 +1,6 @@
 #include "Day17.h"
 
-#include "FileReader.h"
+#include "../FileReader.h"
 
 #include <list>
 
@@ -9,7 +9,7 @@ namespace day17
 {
 	int64_t part1()
 	{
-		const auto steps = std::stoll(getLine("Day17.txt"));
+		const auto steps = std::stoll(getLine("Days\\Day17.txt"));
 
 		std::list<int64_t> numbers{ 0 };
 		size_t current = 0;
@@ -25,7 +25,7 @@ namespace day17
 
 	int64_t part2()
 	{
-		const auto steps = std::stoll(getLine("Day17.txt"));
+		const auto steps = std::stoll(getLine("Days\\Day17.txt"));
 
 		size_t current = 0;
 		int64_t result = 0;

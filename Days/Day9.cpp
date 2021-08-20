@@ -1,13 +1,13 @@
 #include "Day9.h"
 
-#include "FileReader.h"
+#include "../FileReader.h"
 
 
 namespace day9
 {
 	int64_t part1()
 	{
-		const auto line = getLine("Day9.txt");
+		const auto line = getLine("Days\\Day9.txt");
 		int64_t result = 0;
 		int64_t depth = 0;
 		auto garbage = false;
@@ -45,7 +45,7 @@ namespace day9
 
 	int64_t part2()
 	{
-		const auto line = getLine("Day9.txt");
+		const auto line = getLine("Days\\Day9.txt");
 		int64_t result = 0;
 		int64_t depth = 0;
 		auto garbage = false;

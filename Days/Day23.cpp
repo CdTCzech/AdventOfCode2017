@@ -1,6 +1,6 @@
 #include "Day23.h"
 
-#include "FileReader.h"
+#include "../FileReader.h"
 
 #include <iterator>
 #include <sstream>
@@ -16,7 +16,7 @@ namespace day23
 		std::vector<int64_t> registers(8, 0);
 		std::vector<std::vector<std::string>> instructions;
 
-		for (const auto& line : getLineByLine("Day23.txt"))
+		for (const auto& line : getLineByLine("Days\\Day23.txt"))
 		{
 			std::istringstream iss(line);
 			std::vector<std::string> tokens{ std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{} };

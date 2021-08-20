@@ -1,6 +1,6 @@
 #include "Day18.h"
 
-#include "FileReader.h"
+#include "../FileReader.h"
 
 #include <atomic>
 #include <condition_variable>
@@ -21,7 +21,7 @@ namespace day18
 		std::vector<int64_t> registers(26, 0);
 		std::vector<std::vector<std::string>> instructions;
 
-		for (const auto& line : getLineByLine("Day18.txt"))
+		for (const auto& line : getLineByLine("Days\\Day18.txt"))
 		{
 			std::istringstream iss(line);
 			std::vector<std::string> tokens{ std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{} };
@@ -274,7 +274,7 @@ namespace day18
 	{
 		std::vector<std::vector<std::string>> instructions;
 
-		for (const auto& line : getLineByLine("Day18.txt"))
+		for (const auto& line : getLineByLine("Days\\Day18.txt"))
 		{
 			std::istringstream iss(line);
 			std::vector<std::string> tokens{ std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{} };

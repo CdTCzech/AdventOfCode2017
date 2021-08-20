@@ -1,6 +1,6 @@
 #include "Day10.h"
 
-#include "FileReader.h"
+#include "../FileReader.h"
 
 #include <iomanip>
 #include <sstream>
@@ -13,7 +13,7 @@ namespace day10
 	int64_t part1()
 	{
 		constexpr size_t SIZE = 256;
-		const auto line = getLine("Day10.txt");
+		const auto line = getLine("Days\\Day10.txt");
 
 		std::vector<int64_t> tokens;
 		std::size_t start = 0, end = 0;
@@ -58,7 +58,7 @@ namespace day10
 	std::string part2()
 	{
 		constexpr size_t SIZE = 256;
-		const auto line = getLine("Day10.txt");
+		const auto line = getLine("Days\\Day10.txt");
 
 		std::vector<size_t> lenghts;
 		for (const auto& character : line)

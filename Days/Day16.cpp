@@ -1,6 +1,6 @@
 #include "Day16.h"
 
-#include "FileReader.h"
+#include "../FileReader.h"
 
 #include <algorithm>
 #include <array>
@@ -15,7 +15,7 @@ namespace day16
 	{
 		std::string programs{ "abcdefghijklmnop" };
 
-		const auto line = getLine("Day16.txt");
+		const auto line = getLine("Days\\Day16.txt");
 
 		std::vector<std::string> tokens;
 		std::size_t start = 0, end = 0;
@@ -62,7 +62,7 @@ namespace day16
 		std::string programs{ "abcdefghijklmnop" };
 		std::string tempPrograms{ "abcdefghijklmnop" };
 
-		const auto line = getLine("Day16.txt");
+		const auto line = getLine("Days\\Day16.txt");
 
 		std::vector<std::string> tokens;
 		std::size_t start = 0, end = 0;

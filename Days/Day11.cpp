@@ -1,13 +1,13 @@
 #include "Day11.h"
 
-#include "FileReader.h"
+#include "../FileReader.h"
 
 
 namespace day11
 {
 	int64_t part1()
 	{
-		const auto line = getLine("Day11.txt");
+		const auto line = getLine("Days\\Day11.txt");
 
 		std::vector<std::string> tokens;
 		std::size_t start = 0, end = 0;
@@ -62,7 +62,7 @@ namespace day11
 
 	int64_t part2()
 	{
-		const auto line = getLine("Day11.txt");
+		const auto line = getLine("Days\\Day11.txt");
 
 		std::vector<std::string> tokens;
 		std::size_t start = 0, end = 0;

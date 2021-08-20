@@ -1,6 +1,6 @@
 #include "Day8.h"
 
-#include "FileReader.h"
+#include "../FileReader.h"
 
 #include <algorithm>
 #include <iterator>
@@ -15,7 +15,7 @@ namespace day8
 	{
 		std::map<std::string, int64_t> registers;
 
-		for (const auto& line : getLineByLine("Day8.txt"))
+		for (const auto& line : getLineByLine("Days\\Day8.txt"))
 		{
 			std::istringstream iss(line);
 			std::vector<std::string> tokens{ std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{} };
@@ -87,7 +87,7 @@ namespace day8
 		std::map<std::string, int64_t> registers;
 		int64_t result = INT64_MIN;
 
-		for (const auto& line : getLineByLine("Day8.txt"))
+		for (const auto& line : getLineByLine("Days\\Day8.txt"))
 		{
 			std::istringstream iss(line);
 			std::vector<std::string> tokens{ std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{} };

@@ -1,7 +1,7 @@
 #include "Day5.h"
 
-#include "FileReader.h"
-#include "Utils.h"
+#include "../FileReader.h"
+#include "../Utils.h"
 
 #include <vector>
 
@@ -12,7 +12,7 @@ namespace day5
 	{
 		std::vector<int64_t> jumpList;
 
-		for (const auto& line : getLineByLine("Day5.txt"))
+		for (const auto& line : getLineByLine("Days\\Day5.txt"))
 		{
 			jumpList.emplace_back(std::stoll(line));
 		}
@@ -35,7 +35,7 @@ namespace day5
 	{
 		std::vector<int64_t> jumpList;
 
-		for (const auto& line : getLineByLine("Day5.txt"))
+		for (const auto& line : getLineByLine("Days\\Day5.txt"))
 		{
 			jumpList.emplace_back(std::stoll(line));
 		}

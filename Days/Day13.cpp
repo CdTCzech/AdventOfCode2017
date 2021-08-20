@@ -1,6 +1,6 @@
 #include "Day13.h"
 
-#include "FileReader.h"
+#include "../FileReader.h"
 
 #include <algorithm>
 #include <iterator>
@@ -12,7 +12,7 @@ namespace day13
 	int64_t part1()
 	{
 		std::vector<std::pair<int64_t, int64_t>> scanners;
-		for (const auto& line : getLineByLine("Day13.txt"))
+		for (const auto& line : getLineByLine("Days\\Day13.txt"))
 		{
 			std::istringstream iss(line);
 			std::vector<std::string> tokens{ std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{} };
@@ -35,7 +35,7 @@ namespace day13
 	int64_t part2()
 	{
 		std::vector<std::pair<int64_t, int64_t>> scanners;
-		for (const auto& line : getLineByLine("Day13.txt"))
+		for (const auto& line : getLineByLine("Days\\Day13.txt"))
 		{
 			std::istringstream iss(line);
 			std::vector<std::string> tokens{ std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{} };

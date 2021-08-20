@@ -1,7 +1,7 @@
 #include "Day6.h"
 
-#include "FileReader.h"
-#include "Utils.h"
+#include "../FileReader.h"
+#include "../Utils.h"
 
 #include <algorithm>
 #include <iterator>
@@ -23,7 +23,7 @@ namespace day6
 
 	int64_t part1()
 	{
-		const auto line = getLine("Day6.txt");
+		const auto line = getLine("Days\\Day6.txt");
 		std::vector<int64_t> banks;
 
 		{
@@ -71,7 +71,7 @@ namespace day6
 
 	int64_t part2()
 	{
-		const auto line = getLine("Day6.txt");
+		const auto line = getLine("Days\\Day6.txt");
 		std::vector<int64_t> banks;
 
 		{

@@ -1,6 +1,6 @@
 #include "Day19.h"
 
-#include "FileReader.h"
+#include "../FileReader.h"
 
 #include <vector>
 
@@ -20,7 +20,7 @@ namespace day19
 		std::string result;
 		std::vector<std::string> grid;
 
-		for (const auto& line : getLineByLine("Day19.txt"))
+		for (const auto& line : getLineByLine("Days\\Day19.txt"))
 		{
 			grid.emplace_back(line);
 		}
@@ -97,7 +97,7 @@ namespace day19
 		int64_t result = 0;
 		std::vector<std::string> grid;
 
-		for (const auto& line : getLineByLine("Day19.txt"))
+		for (const auto& line : getLineByLine("Days\\Day19.txt"))
 		{
 			grid.emplace_back(line);
 		}

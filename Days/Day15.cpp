@@ -1,6 +1,6 @@
 #include "Day15.h"
 
-#include "FileReader.h"
+#include "../FileReader.h"
 
 #include <array>
 #include <sstream>
@@ -14,7 +14,7 @@ namespace day15
 		std::array<uint64_t, 2> values{};
 		auto second = false;
 
-		for (const auto& line : getLineByLine("Day15.txt"))
+		for (const auto& line : getLineByLine("Days\\Day15.txt"))
 		{
 			std::istringstream iss(line);
 			std::vector<std::string> tokens{ std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{} };
@@ -53,7 +53,7 @@ namespace day15
 		std::array<uint64_t, 2> values{};
 		auto second = false;
 
-		for (const auto& line : getLineByLine("Day15.txt"))
+		for (const auto& line : getLineByLine("Days\\Day15.txt"))
 		{
 			std::istringstream iss(line);
 			std::vector<std::string> tokens{ std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{} };

@@ -1,7 +1,7 @@
 #include "Day7.h"
 
-#include "FileReader.h"
-#include "Utils.h"
+#include "../FileReader.h"
+#include "../Utils.h"
 
 #include <algorithm>
 #include <array>
@@ -19,7 +19,7 @@ namespace day7
 		std::set<std::string> programs;
 		std::set<std::string> pointedPrograms;
 
-		for (const auto& line : getLineByLine("Day7.txt"))
+		for (const auto& line : getLineByLine("Days\\Day7.txt"))
 		{
 			std::istringstream iss(line);
 			std::vector<std::string> tokens{ std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{} };
@@ -59,7 +59,7 @@ namespace day7
 	{
 		std::map<std::string, std::pair<int64_t, std::vector<std::string>>> programs;
 
-		for (const auto& line : getLineByLine("Day7.txt"))
+		for (const auto& line : getLineByLine("Days\\Day7.txt"))
 		{
 			std::istringstream iss(line);
 			std::vector<std::string> tokens{ std::istream_iterator<std::string>{iss}, std::istream_iterator<std::string>{} };

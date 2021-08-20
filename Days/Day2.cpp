@@ -1,6 +1,6 @@
 #include "Day2.h"
 
-#include "FileReader.h"
+#include "../FileReader.h"
 
 #include <sstream>
 #include <vector>
@@ -12,7 +12,7 @@ namespace day2
 	{
 		int64_t result = 0;
 
-		for (const auto& line : getLineByLine("Day2.txt"))
+		for (const auto& line : getLineByLine("Days\\Day2.txt"))
 		{
 			int64_t min = INT64_MAX;
 			int64_t max = 0;
@@ -56,7 +56,7 @@ namespace day2
 	{
 		int64_t result = 0;
 
-		for (const auto& line : getLineByLine("Day2.txt"))
+		for (const auto& line : getLineByLine("Days\\Day2.txt"))
 		{
 			int64_t current;
 			std::vector<int64_t> numbers;

@@ -1,13 +1,13 @@
 #include "Day1.h"
 
-#include "FileReader.h"
+#include "../FileReader.h"
 
 
 namespace day1
 {
 	int64_t part1()
 	{
-		auto line = getLine("Day1.txt");
+		auto line = getLine("Days\\Day1.txt");
 
 		if (line.empty())
 		{
@@ -31,7 +31,7 @@ namespace day1
 
 	int64_t part2()
 	{
-		const auto line = getLine("Day1.txt");
+		const auto line = getLine("Days\\Day1.txt");
 
 		if (line.empty())
 		{

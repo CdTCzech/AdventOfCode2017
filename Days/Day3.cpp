@@ -1,7 +1,7 @@
 #include "Day3.h"
 
-#include "FileReader.h"
-#include "Utils.h"
+#include "../FileReader.h"
+#include "../Utils.h"
 
 #include <algorithm>
 #include <array>
@@ -11,7 +11,7 @@ namespace day3
 {
 	int64_t part1()
 	{
-		const auto line = getLine("Day3.txt");
+		const auto line = getLine("Days\\Day3.txt");
 		const auto toFind = std::stoll(line);
 
 		const auto root = static_cast<int64_t>(sqrt(toFind - 1));
@@ -33,7 +33,7 @@ namespace day3
 
 	int64_t part2()
 	{
-		const auto line = getLine("Day3.txt");
+		const auto line = getLine("Days\\Day3.txt");
 		const auto toFind = std::stoll(line);
 
 		constexpr int64_t X = 11;

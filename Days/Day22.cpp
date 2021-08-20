@@ -1,6 +1,6 @@
 #include "Day22.h"
 
-#include "FileReader.h"
+#include "../FileReader.h"
 
 #include <map>
 #include <set>
@@ -57,7 +57,7 @@ namespace day22
 		std::set<std::pair<int64_t, int64_t>> infected;
 
 		int64_t y = 12;
-		for (const auto& line : getLineByLine("Day22.txt"))
+		for (const auto& line : getLineByLine("Days\\Day22.txt"))
 		{
 			int64_t x = -12;
 			for (const auto& character : line)
@@ -128,7 +128,7 @@ namespace day22
 		std::map<std::pair<int64_t, int64_t>, State> grid;
 
 		int64_t y = 12;
-		for (const auto& line : getLineByLine("Day22.txt"))
+		for (const auto& line : getLineByLine("Days\\Day22.txt"))
 		{
 			int64_t x = -12;
 			for (const auto& character : line)

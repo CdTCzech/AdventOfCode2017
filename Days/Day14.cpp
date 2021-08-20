@@ -1,6 +1,6 @@
 #include "Day14.h"
 
-#include "FileReader.h"
+#include "../FileReader.h"
 
 #include <bitset>
 #include <string>
@@ -65,7 +65,7 @@ namespace day14
 
 	int64_t part1()
 	{
-		const auto line = getLine("Day14.txt");
+		const auto line = getLine("Days\\Day14.txt");
 		int64_t result = 0;
 
 		for (size_t i = 0; i < 128; ++i)
@@ -98,7 +98,7 @@ namespace day14
 
 	int64_t part2()
 	{
-		const auto line = getLine("Day14.txt");
+		const auto line = getLine("Days\\Day14.txt");
 		std::vector<std::string> grid;
 
 		for (size_t i = 0; i < 128; ++i)
